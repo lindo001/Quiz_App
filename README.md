@@ -1,16 +1,14 @@
 # zoe_quiz_app
+Zoe Quiz App is a straightforward application where programmers can put their knowledge to the test.
 
-A new Flutter project.
 
-## Getting Started
+## Resources used:
 
-This project is a starting point for a Flutter application.
+- [QuizAPI: Used for fetching quiz data](https://quizapi.io/)
+- [Google Fonts: Provides fonts for the app](https://fonts.google.com/download/next-steps)
+- [Hive DB: Used for local storage](https://docs.hivedb.dev/#/)
+- [Provider: Employed for state management](https://pub.dev/packages/provider)
 
-A few resources to get you started if this is your first Flutter project:
+## Objective:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The main goal is to acquire skills in fetching data from an API using JSON, mastering asynchronous programming with Dart through the use of async and await, incorporating parallax background effects, and enhancing overall app functionality.

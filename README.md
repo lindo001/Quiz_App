@@ -8,6 +8,7 @@ Zoe Quiz App is a straightforward application where programmers can put their kn
 - [Google Fonts: Provides fonts for the app](https://fonts.google.com/download/next-steps)
 - [Hive DB: Used for local storage](https://docs.hivedb.dev/#/)
 - [Provider: Employed for state management](https://pub.dev/packages/provider)
+- [http package: make HTTP requests](https://pub.dev/packages/http)
 
 ## Objective:
 

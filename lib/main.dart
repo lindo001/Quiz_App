@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // import 'pages/landingpage.dart';
 import 'package:http/http.dart'as http;
+import 'package:zoe_quiz_app/componets/fetch_and_format_data.dart';
+import 'package:zoe_quiz_app/pages/landingpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,40 +21,19 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    fetchPost();
+   final io = FetchAndFormatData();
+   io.fetchPost();
+   
   }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return const MaterialApp(
       home: Placeholder(),
     );
   }
 }
 
 
-Future fetchPost() async {
-  String apiUrl = 'https://quizapi.io/api/v1/questions';
-  String apiKey = 'iWhurQWlfvCeeoJrkcv5VXmsbDNQby0tTnSZErCJ';
-  int limit = 10;
-  String cat = "DevOps";
-  try {
-    var response = await http.get(
-      Uri.parse('$apiUrl?apiKey=$apiKey&limit=$limit&category=$cat'),
-    );
-
-    if (response.statusCode == 200) {
-      // Request successful, handle the response here
-      print(response.body);
-    } else {
-      // Request failed
-      print('Failed to fetch quiz questions: ${response.statusCode}');
-    }
-  } catch (e) {
-    // Exception occurred during request
-    print('Error: $e');
-  }
-}
 
 enum Category{
 LINUX,

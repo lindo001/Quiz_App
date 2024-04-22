@@ -5,11 +5,15 @@ enum Difficulty{
 }
 
 enum Category{
-linux,
-devops,
-networking,
-programming,
-cloud,
-docker,
-kubernetes,
+Linux,
+DevOps,
+BASH,
+Docker,
+HTML,
+MySQL,
+WordPress,
+Laravel,
+Kubernetes,
+JavaScript,
+Python
 }

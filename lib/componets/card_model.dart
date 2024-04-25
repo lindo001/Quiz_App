@@ -11,7 +11,7 @@ class CardModel{
 }
 
 List<CardModel> demoData = [
-  CardModel(category: Category.linux, imagePath: "imagePath", ratings:4.2 ),
+  CardModel(category: Category.Linux, imagePath: "imagePath", ratings:4.2 ),
   CardModel(category: Category.DevOps, imagePath: "imagePath", ratings:3.2 ),
-  CardModel(category: Category.docker, imagePath: "imagePath", ratings:3.2 )
+  CardModel(category: Category.Docker, imagePath: "imagePath", ratings:3.2 )
 ];

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart'as http;
 import 'package:zoe_quiz_app/componets/fetch_and_format_data.dart';
 import 'package:zoe_quiz_app/pages/landingpage.dart';
+import 'package:zoe_quiz_app/pages/slash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,20 +17,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-   final io = FetchAndFormatData();
-   io.fetchPost();
+  // // This widget is the root of your application.
+  // @override
+  // // void initState() {
+  // //   // TODO: implement initState
+  // //   super.initState();
+  //  final io = FetchAndFormatData();
+  //  io.fetchPost();
    
-  }
+  // // }
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Placeholder(),
-    );
+      home: SlashScreen(),
+      );
   }
 }
 

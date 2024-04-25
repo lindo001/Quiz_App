@@ -12,10 +12,10 @@ class SlashScreen extends StatefulWidget {
 }
 
 class _SlashScreenState extends State<SlashScreen> {
-  void nextPage(){
+  void nextPage(Widget pageToGoto){
     Future.delayed(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (BuildContext context) => const LandingPage(),
+        builder: (BuildContext context) =>  pageToGoto,
       ));
     });
   }
@@ -35,21 +35,18 @@ return false;
   bool isConnected = await Test();
   if (isConnected) {
     //Online mode
-    nextPage();
+    nextPage(LandingPage(loadFromInternet: true,));
   } else {
     //Offline mode
-    nextPage();
+    nextPage(LandingPage.noArgument());
+    
   }
 }
 
   @override
   void initState() {
-    Test();
     // TODO: implement initState
     super.initState();
-    
-
-
     //loading
     testAndNavigate();
 

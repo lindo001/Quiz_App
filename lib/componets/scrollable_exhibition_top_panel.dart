@@ -13,13 +13,17 @@ class ScrollableExhibitionTopPanel extends StatelessWidget {
       width: screenDetals.width,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-           holders(screenDetals: screenDetals),
-           holders(screenDetals: screenDetals),
-           holders(screenDetals: screenDetals),
-        ],),
+        child: ListView.builder(itemCount: 2,itemBuilder: (context,index){
+          // holders(screenDetals: screenDetals);
+          Text("default text");
+        }),
+        // child: Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //    holders(screenDetals: screenDetals),
+        //    holders(screenDetals: screenDetals),
+        //    holders(screenDetals: screenDetals),
+        // ],),
       ),
     );
   }
@@ -29,9 +33,11 @@ class holders extends StatelessWidget {
   const holders({
     super.key,
     required this.screenDetals,
+    required this.holderTitle
   });
 
   final dynamic screenDetals;
+  final dynamic holderTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -41,6 +47,13 @@ class holders extends StatelessWidget {
       borderRadius: BorderRadius.circular(10)
     ),
     
+    child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Align(
+        alignment: Alignment.bottomLeft,
+        
+        child: Text(holderTitle.toString())),
+    )
     );
   }
 }

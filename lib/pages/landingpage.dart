@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:zoe_quiz_app/componets/controlled_enums.dart';
 import 'package:zoe_quiz_app/componets/scrollable_exhibition_bottom_panel.dart';
 import 'package:zoe_quiz_app/componets/scrollable_exhibition_top_panel.dart';
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+  bool loadFromInternet;
+ LandingPage({Key? key, required this.loadFromInternet}) : super(key: key);
+
+  //If there are any Issues will run this as default
+  LandingPage.noArgument(): loadFromInternet = false;
+
   static String id = "LandingPage";
     
   @override
   Widget build(BuildContext context) {
     final mediaDetail = MediaQuery.of(context).size; 
-    return Scaffold(
-
-      backgroundColor: Colors.grey,
-      body: Stack(children: <Widget>[
-        SafeArea(child: Column(
-children: [
-            //Header
-            Header(screenDetals: mediaDetail),
-          //body
-          SizedBox(height: 30,),
-          ScrollableExhibitionTopPanel(screenDetals: mediaDetail,),
-          SizedBox(height: 30,),
-
-          // Container(color: Colors.amber,height: 200,width: double.infinity,)
-],
-        )
+    return  Scaffold(
+      body: SafeArea(child: ListView.builder(
+        itemCount: Category.values.length,
+        shrinkWrap: true,
+        itemBuilder: (context,index)=> Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Image.asset("assets/MySQL.png"),
+              holders(screenDetals: mediaDetail,holderTitle: Category.values[index].toString()),
+            ],
+          ),
+        ),)
         ),
-        
-      ],),
+      
     );
     
   }

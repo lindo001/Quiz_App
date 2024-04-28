@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:zoe_quiz_app/componets/fetch_and_format_data.dart';
 
 class ScrollableExhibitionTopPanel extends StatelessWidget {
   final screenDetals ;
 
-  const ScrollableExhibitionTopPanel({super.key,required this.screenDetals});
+   ScrollableExhibitionTopPanel({super.key,required this.screenDetals});
 
   @override
   Widget build(BuildContext context) {
@@ -33,27 +34,38 @@ class holders extends StatelessWidget {
   const holders({
     super.key,
     required this.screenDetals,
-    required this.holderTitle
+    required this.imgPath
   });
 
   final dynamic screenDetals;
-  final dynamic holderTitle;
+  final dynamic imgPath;
 
   @override
   Widget build(BuildContext context) {
-    return Container(margin: EdgeInsets.only(right: 30),height:  screenDetals.height* 0.30,width:  screenDetals.width* 0.60
-    ,decoration: BoxDecoration(
-      color: Colors.amber,
-      borderRadius: BorderRadius.circular(10)
-    ),
-    
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Align(
-        alignment: Alignment.bottomLeft,
-        
-        child: Text(holderTitle.toString())),
-    )
+    return GestureDetector(
+      onTap: (){
+  //  FetchAndFormatData fetchAndFormatData =  FetchAndFormatData();
+  //  fetchAndFormatData.fetchPost
+  //  fvar h = fetchAndFormatData.getList();
+   
+      print(imgPath.toString().split("/")[1].split(".")[0]); 
+        FetchAndFormatData().fetchPost("BASH");
+      },
+      child: Container(margin: EdgeInsets.only(right: 30),height:  screenDetals.height* 0.30,width:  screenDetals.width* 0.60
+      ,decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(imgPath)),
+        color: Colors.amber.shade100,
+        borderRadius: BorderRadius.circular(10)
+      ),
+      
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Align(
+          alignment: Alignment.bottomLeft,
+          
+          child: Text(imgPath.toString().split("/")[1].split(".")[0])),
+      )
+      ),
     );
   }
 }

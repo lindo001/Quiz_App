@@ -12,6 +12,19 @@ class LandingPage extends StatelessWidget {
 
   static String id = "LandingPage";
     
+  final List<String> imgPath = [
+"assets/BASH.png",
+"assets/DevOps.png",
+"assets/Docker.png",
+"assets/HTML.png",
+"assets/JavaScript.png",
+"assets/Kubernetes.png",
+"assets/Laravel.png",
+"assets/Linux.png",
+"assets/MySQL.png",
+"assets/Python.png",
+"assets/WordPress.png"
+  ];
   @override
   Widget build(BuildContext context) {
     final mediaDetail = MediaQuery.of(context).size; 
@@ -23,8 +36,7 @@ class LandingPage extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              Image.asset("assets/MySQL.png"),
-              holders(screenDetals: mediaDetail,holderTitle: Category.values[index].toString()),
+              holders(screenDetals: mediaDetail,imgPath: imgPath[index]),
             ],
           ),
         ),)

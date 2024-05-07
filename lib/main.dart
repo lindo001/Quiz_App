@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'pages/landingpage.dart';
 import 'package:http/http.dart'as http;
-import 'package:zoe_quiz_app/componets/fetch_and_format_data.dart';
-import 'package:zoe_quiz_app/pages/landingpage.dart';
-import 'package:zoe_quiz_app/pages/slash_screen.dart';
+
+import 'pages/slash_screen.dart';
 
 void main() {
   runApp(const MyApp());

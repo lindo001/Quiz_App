@@ -1,8 +1,7 @@
-import 'dart:io';
+
 
 import 'package:flutter/material.dart';
-import 'package:zoe_quiz_app/componets/fetch_and_format_data.dart';
-import 'package:zoe_quiz_app/pages/landingpage.dart';
+import 'package:zoe_quiz_app/pages/landing_page.dart';
 
 class SlashScreen extends StatefulWidget {
   const SlashScreen({super.key});
@@ -12,63 +11,43 @@ class SlashScreen extends StatefulWidget {
 }
 
 class _SlashScreenState extends State<SlashScreen> {
-  void nextPage(Widget pageToGoto){
-    Future.delayed(Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (BuildContext context) =>  pageToGoto,
-      ));
-    });
-  }
-
-  Future<bool> Test()async{
-    try {
-  final result = await InternetAddress.lookup('example.com');
-  if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
-    return true;
-  }
-} on SocketException catch (_) {
-  return false;
-}
-return false;
-  }
-  Future<void> testAndNavigate() async {
-  bool isConnected = await Test();
-  if (isConnected) {
-    //Online mode
-    nextPage(LandingPage(loadFromInternet: true,));
-  } else {
-    //Offline mode
-    nextPage(LandingPage.noArgument());
-    
-  }
-}
-
   @override
   void initState() {
     // TODO: implement initState
+    Future.delayed(Duration(seconds: 4),(){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context){
+        return LandingPage();
+      }));
+    })
+   ;
     super.initState();
-    //loading
-    testAndNavigate();
-
   }
-  @override
 
-  
+
+  @override
   Widget build(BuildContext context) {
+    
+    final screendetails = MediaQuery.of(context).size;
     return  Scaffold(
-      body: Center(child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: 270,),
-          Icon(Icons.hub_outlined,size: 40,),
-          Text("\n\n fetching data..."),
-          SizedBox(height: 270,),
-          Container(
-            height: 10,
-            width: 10,
-            child: CircularProgressIndicator(color: Colors.black,))
-        ],
-      ),),
+
+      backgroundColor: Colors.white,
+      body: Container(
+        height: screendetails.height,
+        width:  screendetails.width,
+        child: Center(child: Column(
+          children: [
+            SizedBox(height: 200,),
+            Text("Q",style: TextStyle(fontSize: 100),),
+            Text("Simple Quiz",style: TextStyle(),),
+
+            // Image.asset("assets/logo.png",width: 170,),
+            SizedBox(height: 100,),
+            Image.asset("assets/icons/light_theme_loading_logo.gif",),
+
+            
+          ],
+        )),
+      ),
     );
   }
 }

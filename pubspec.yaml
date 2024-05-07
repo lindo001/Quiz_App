@@ -67,7 +67,9 @@ flutter:
   assets:
     - assets/
     - assets/MySQL.png
-  #   - images/a_dot_ham.jpeg
+    - assets/icons/light_theme_loading_logo.gif
+    - assets/icons/dark_theme_loading_logo.gif
+      #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

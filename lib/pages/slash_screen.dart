@@ -13,7 +13,6 @@ class SlashScreen extends StatefulWidget {
 class _SlashScreenState extends State<SlashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     Future.delayed(Duration(seconds: 4),(){
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context){
         return LandingPage();
